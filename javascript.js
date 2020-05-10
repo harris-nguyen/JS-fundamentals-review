@@ -48,3 +48,40 @@ function transformFirstAndLast(array) {
 }
 const test = ['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce']
 console.log(transformFirstAndLast(test)) // {Queen: 'Beyonce'}
+//
+
+function fromListToObject(array) {
+  let obj = {}
+  for(let i = 0; i < array.length; i++){
+    obj[array[i][0]] = array[i][1]
+  }
+  return obj
+}
+const test = [['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]
+console.log(fromListToObject(test))// { make: 'Ford', model : 'Mustang', year : 1964 }
+//
+
+function transformEmployeeData(employeeData) {
+  const arr = []
+  const obj = {}
+  for(let i = 0; i < employeeData.length; i++){
+    for (let j = 0; j < employeeData[i].length; j++){
+      obj[employeeData[i][j][0]] = employeeData[i][j][1]
+    }
+    arr.push(obj)
+  }
+  return arr
+}
+const test = [
+  [
+    ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
+  ],
+  [
+    ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
+  ]
+]
+console.log(transformEmployeeData(test))
+// [
+//   { firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk' },
+//   { firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager' }
+// ]
