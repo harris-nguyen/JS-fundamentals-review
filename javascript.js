@@ -85,3 +85,51 @@ console.log(transformEmployeeData(test))
 //   { firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk' },
 //   { firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager' }
 // ]
+
+function getAllKeys(obj) {
+  let arr = []
+  for(var key in obj){
+    arr.push(obj[key])
+  }
+  return arr
+}
+const test = {
+  name: 'Sam',
+  age : 25,
+  hasPets : true
+}
+console.log(getAllKeys(test))
+//
+
+function listAllValues(obj) {
+  const arr = []
+  for(var key in obj){
+    arr.push(obj[key])
+  }
+  return arr
+}
+const test = {
+  name: 'Krysten',
+  age: 33,
+  hasPets: false
+}
+console.log(listAllValues(test)) //['Krysten', 33, false]
+//
+
+function convertObjectToList(obj) {
+  let outerArr = []
+  for(let key in obj){
+  let innerArr = []
+  let props = (obj[key])
+  let keys = key
+    innerArr.push(props, keys)
+    outerArr.push(innerArr)
+  }
+  return outerArr
+}
+const test = {
+  name: 'Holly',
+  age: 35,
+  role: 'producer'
+}
+console.log(convertObjectToList(test)) //[[['name', 'Holly'], ['age', 35], ['role', 'producer']]
