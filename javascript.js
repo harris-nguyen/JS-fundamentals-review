@@ -133,3 +133,31 @@ const test = {
   role: 'producer'
 }
 console.log(convertObjectToList(test)) //[[['name', 'Holly'], ['age', 35], ['role', 'producer']]
+//
+
+var customerData = {
+  Joe: {
+    visits: 1,
+  },
+  Carol: {
+    visits: 2,
+  },
+  Howard: {
+    visits: 3,
+  },
+  Carrie: {
+    visits: 4,
+  },
+};
+function greetCustomer(firstName) {
+  for (let key in firstName) {
+    for (let key2 in customerData) {
+      if (key2 === firstName) {
+        return `Welcome back, ${firstName}!`;
+      } else {
+        return `hello stranger danger, ${firstName}`;
+      }
+    }
+  }
+}
+console.log(greetCustomer("Joe"));
