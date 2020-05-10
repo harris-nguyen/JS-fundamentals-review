@@ -37,3 +37,14 @@ function getNthElement(array, n) {
 }
 var output = getNthElement([1, 3, 5], 1);
 console.log(output); // --> 3
+//
+
+function transformFirstAndLast(array) {
+  const obj = {}
+  const first = (array[0])
+  const last = (array[array.length - 1])
+  obj[first] = last
+  return obj
+}
+const test = ['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce']
+console.log(transformFirstAndLast(test)) // {Queen: 'Beyonce'}
